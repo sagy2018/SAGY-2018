@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jason.sagy.Selection">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp">
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="22dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="42dp"
+                android:text="Cleanliness" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox2"
+                android:layout_alignStart="@+id/checkBox2"
+                android:layout_below="@+id/checkBox2"
+                android:layout_marginTop="32dp"
+                android:text="Sports" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox3"
+                android:layout_alignStart="@+id/checkBox3"
+                android:layout_below="@+id/checkBox3"
+                android:layout_marginTop="29dp"
+                android:text="Drug Eradication" />
+
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox4"
+                android:layout_alignStart="@+id/checkBox4"
+                android:layout_below="@+id/checkBox4"
+                android:layout_marginTop="30dp"
+                android:text="Women and Girl Child" />
+
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox5"
+                android:layout_alignStart="@+id/checkBox5"
+                android:layout_below="@+id/checkBox5"
+                android:layout_marginTop="38dp"
+                android:text="Health Programmes" />
+
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox6"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/checkBox6"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox6"
+                android:layout_alignStart="@+id/checkBox6"
+                android:layout_below="@+id/checkBox6"
+                android:layout_marginTop="40dp"
+                android:text="People with Disability" />
+
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkBox22"
+                android:layout_toLeftOf="@+id/checkBox19"
+                android:layout_toStartOf="@+id/checkBox19"
+                android:text="Class 10 and Retention" />
+
+            <CheckBox
+                android:id="@+id/checkBox11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox10"
+                android:layout_alignStart="@+id/checkBox10"
+                android:layout_below="@+id/checkBox10"
+                android:layout_marginTop="22dp"
+                android:text="Education" />
+
+            <CheckBox
+                android:id="@+id/checkBox14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox11"
+                android:layout_alignStart="@+id/checkBox11"
+                android:layout_below="@+id/checkBox11"
+                android:layout_marginTop="30dp"
+                android:text="Adult Literacy" />
+
+            <CheckBox
+                android:id="@+id/checkBox16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox14"
+                android:layout_alignStart="@+id/checkBox14"
+                android:layout_below="@+id/checkBox14"
+                android:layout_marginTop="18dp"
+                android:text="Disaster Management" />
+
+            <CheckBox
+                android:id="@+id/checkBox17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkBox2"
+                android:layout_alignBottom="@+id/checkBox2"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_toEndOf="@+id/checkBox5"
+                android:layout_toRightOf="@+id/checkBox5"
+                android:text="Bharath Nirman" />
+
+            <CheckBox
+                android:id="@+id/checkBox18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/checkBox4"
+                android:layout_alignEnd="@+id/checkBox20"
+                android:layout_alignRight="@+id/checkBox20"
+                android:text="Senior Citizen" />
+
+            <CheckBox
+                android:id="@+id/checkBox19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkBox4"
+                android:layout_alignBottom="@+id/checkBox4"
+                android:layout_alignLeft="@+id/checkBox18"
+                android:layout_alignStart="@+id/checkBox18"
+                android:text="Anti-Crime and Anti Violence" />
+
+            <CheckBox
+                android:id="@+id/checkBox20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkBox5"
+                android:layout_alignBottom="@+id/checkBox5"
+                android:layout_alignLeft="@+id/checkBox17"
+                android:layout_alignStart="@+id/checkBox17"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:text="Cultural Events" />
+
+            <CheckBox
+                android:id="@+id/checkBox21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkBox6"
+                android:layout_alignBottom="@+id/checkBox6"
+                android:layout_alignLeft="@+id/checkBox17"
+                android:layout_alignStart="@+id/checkBox17"
+                android:text="Horticulture" />
+
+            <CheckBox
+                android:id="@+id/checkBox22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox21"
+                android:layout_alignStart="@+id/checkBox21"
+                android:layout_alignTop="@+id/checkBox9"
+                android:text="Rural Industrialisatiin" />
+
+            <CheckBox
+                android:id="@+id/checkBox23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox22"
+                android:layout_alignStart="@+id/checkBox22"
+                android:layout_alignTop="@+id/checkBox10"
+                android:text="Self-Employment" />
+
+            <CheckBox
+                android:id="@+id/checkBox24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/checkBox23"
+                android:layout_alignStart="@+id/checkBox23"
+                android:layout_alignTop="@+id/checkBox11"
+                android:layout_marginTop="18dp"
+                android:text="CheckBox" />
+
+            <CheckBox
+                android:id="@+id/checkBox25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/checkBox11"
+                android:layout_alignBottom="@+id/checkBox11"
+                android:layout_alignLeft="@+id/checkBox24"
+                android:layout_alignStart="@+id/checkBox24"
+                android:text="Tree-Plantation" />
+
+            <CheckBox
+                android:id="@+id/checkBox26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkBox24"
+                android:layout_toEndOf="@+id/checkBox9"
+                android:layout_toRightOf="@+id/checkBox9"
+                android:text="Watershed Management" />
+
+            <Button
+                android:id="@+id/but"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/checkBox16"
+                android:layout_toEndOf="@+id/checkBox3"
+                android:layout_toRightOf="@+id/checkBox3"
+                android:text="Proceed to Login" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
