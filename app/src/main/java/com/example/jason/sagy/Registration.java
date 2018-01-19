@@ -57,7 +57,14 @@ public class Registration extends AppCompatActivity {
             }
         });
     }
-    
+    private void registerUser(){
+
+        String user=username.getText().toString().trim();
+        String pass=password.getText().toString().trim();
+        if(user.isEmpty()){
+            username.setError("EMail is required");
+            username.requestFocus();
+        }
 
         if(!Patterns.EMAIL_ADDRESS.matcher(user).matches()){
             username.setError("Please enter a valid EMail");
