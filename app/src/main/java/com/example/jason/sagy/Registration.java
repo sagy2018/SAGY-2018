@@ -4,11 +4,15 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +21,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Registration extends AppCompatActivity {
 
@@ -24,22 +30,43 @@ public class Registration extends AppCompatActivity {
     TextView t2;
     EditText username,password;
     ProgressBar progressBa;
+    Spinner spinner;
     private FirebaseAuth mAuth;
+    ArrayAdapter<CharSequence> adapter;
+    DatabaseReference databaseReference;
+
 
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        spinner =(Spinner) findViewById(R.id.spinner1);
+        adapter=ArrayAdapter.createFromResource(this,R.array.planets_array,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
+        databaseReference=FirebaseDatabase.getInstance().getReference("users");
+        databaseReference=FirebaseDatabase.getInstance().getReference("scheme");
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getBaseContext(),parent.getItemAtPosition(position)+"selected",Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         mAuth = FirebaseAuth.getInstance();
         progressBa=(ProgressBar)findViewById(R.id.progressBar);
         username=(EditText)findViewById(R.id.editText4);
         password=(EditText)findViewById(R.id.editText5);
         register=(Button) findViewById(R.id.button2);
         t2=(TextView)findViewById(R.id.textView2);
+
         t2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,15 +80,39 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 registerUser();
+                adddata();
 
             }
         });
+
     }
+
+    private void adddata(){
+        String user = username.getText().toString().trim();
+        String spindata=spinner.getSelectedItem().toString().trim();
+
+        if(!TextUtils.isEmpty(user)){
+           String id = databaseReference.push().getKey();
+
+          pojo pojo = new pojo(id,user,spindata);
+
+            databaseReference.setValue(pojo);
+            //databaseReference.setValue(user);
+
+
+
+        }else {
+            Toast.makeText(this,"Enter valid name",Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+
     private void registerUser(){
 
         String user=username.getText().toString().trim();
         String pass=password.getText().toString().trim();
-        if(user.isEmpty()){
+        if(TextUtils.isEmpty(user)){
             username.setError("EMail is required");
             username.requestFocus();
         }
@@ -71,7 +122,7 @@ public class Registration extends AppCompatActivity {
             username.requestFocus();
             return;
         }
-        if(pass.isEmpty()){
+        if(TextUtils.isEmpty(pass)){
             password.setError("Password is required");
             password.requestFocus();
             return;
