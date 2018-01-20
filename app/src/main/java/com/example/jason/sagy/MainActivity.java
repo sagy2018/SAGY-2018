@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.onesignal.OneSignal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
             e2=(EditText)findViewById(R.id.editText2);
             mAuth=FirebaseAuth.getInstance();
             t1=(TextView)findViewById(R.id.textView);
+            OneSignal.startInit(this)
+                    .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                    .unsubscribeWhenNotificationsAreDisabled(true)
+                    .init();
             t1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             });
 
         }
+
         private void userlogin(){
 
 

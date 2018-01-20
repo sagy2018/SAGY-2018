@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.jason.sagy.Registration"
-    android:background="@drawable/login">
+    android:background="@drawable/loginbac">
 
     <EditText
         android:id="@+id/editText3"
@@ -18,7 +18,7 @@
         android:ems="10"
         android:hint="UserName"
         android:inputType="textPersonName"
-        android:textColorHint="#80000000"
+        android:textColor="@color/colorAccent"
         android:drawableLeft="@drawable/us"/>
 
     <EditText
@@ -32,8 +32,8 @@
         android:ems="10"
         android:hint="E-Mail ID"
         android:inputType="textPersonName"
-        android:textColorHint="#80000000"
-        android:drawableLeft="@drawable/emaili"/>
+        android:drawableLeft="@drawable/emaili"
+        android:textColor="@color/colorAccent"/>
 
     <EditText
         android:id="@+id/editText5"
@@ -44,9 +44,9 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
-        android:textColorHint="#80000000"
-        android:drawableLeft="@drawable/paswod"/>
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/paswod"
+        android:textColor="@color/colorAccent"/>
 
     <EditText
         android:id="@+id/editText6"
@@ -58,9 +58,9 @@
         android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="Confirm Password"
-        android:inputType="textPersonName"
-        android:textColorHint="#80000000"
-        android:drawableLeft="@drawable/conn"/>
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/conn"
+        android:textColor="@color/colorAccent"/>
 
     <Button
         android:id="@+id/button2"
@@ -68,9 +68,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText6"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="29dp"
+        android:background="@color/cardview_light_background"
         android:text="Register"
-        android:background="#80000000"/>
+        android:textColor="@color/colorAccent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -80,7 +83,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
         android:text="Already have an account?CLick here to Login"
-        android:textColor="#80000000"/>
+        android:textColor="@color/cardview_light_background" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -88,6 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
 
 </RelativeLayout>
