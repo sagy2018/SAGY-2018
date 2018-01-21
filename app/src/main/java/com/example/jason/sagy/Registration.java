@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.onesignal.OneSignal;
 
 public class Registration extends AppCompatActivity {
 
@@ -43,12 +44,12 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
         spinner =(Spinner) findViewById(R.id.spinner1);
         adapter=ArrayAdapter.createFromResource(this,R.array.planets_array,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
-        databaseReference=FirebaseDatabase.getInstance().getReference("users");
-        databaseReference=FirebaseDatabase.getInstance().getReference("scheme");
+        databaseReference=FirebaseDatabase.getInstance().getReference().child("users").push();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -89,12 +90,12 @@ public class Registration extends AppCompatActivity {
 
     private void adddata(){
         String user = username.getText().toString().trim();
-        String spindata=spinner.getSelectedItem().toString().trim();
+        String scheme=spinner.getSelectedItem().toString().trim();
 
         if(!TextUtils.isEmpty(user)){
            String id = databaseReference.push().getKey();
 
-          pojo pojo = new pojo(id,user,spindata);
+          pojo pojo = new pojo(id,user,scheme);
 
             databaseReference.setValue(pojo);
             //databaseReference.setValue(user);

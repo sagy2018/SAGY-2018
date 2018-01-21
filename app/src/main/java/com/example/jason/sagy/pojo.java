@@ -8,14 +8,14 @@ public class pojo {
 
     String id;
     String user;
-    String spindata;
+    String scheme;
 
 
 
-    public pojo(String id,String user, String spindata) {
+    public pojo(String id,String user, String scheme) {
         this.id=id;
         this.user = user;
-        this.spindata = spindata;
+        this.scheme = scheme;
     }
     public String getId(){
         return id;
@@ -25,7 +25,7 @@ public class pojo {
         return user;
     }
 
-    public String getSpindata() {
-        return spindata;
+    public String getScheme() {
+        return scheme;
     }
 }
