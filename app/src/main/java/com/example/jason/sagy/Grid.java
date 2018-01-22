@@ -33,7 +33,7 @@ public class Grid extends AppCompatActivity {
         l3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Grid.this,notifications.class);
+                Intent intent=new Intent(Grid.this,Notifications.class);
                 startActivity(intent);
             }
         });

@@ -1,5 +1,6 @@
 package com.example.jason.sagy;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
+
         //OneSignal.syncHashedEmail(String.valueOf(e1));
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
