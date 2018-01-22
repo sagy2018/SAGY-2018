@@ -53,7 +53,13 @@ public class Registration extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(),parent.getItemAtPosition(position)+"selected",Toast.LENGTH_LONG).show();
+                if (parent!= null) {
+                    Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "selected", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "selected", Toast.LENGTH_LONG).hashCode();
+
+                }
             }
 
             @Override

@@ -11,6 +11,8 @@
     <color name="starblue">#09c6df</color>
     <color name="endblue">#0bcce6</color>
     <color name="graylight">#fafafa</color>
+    <color name="backgroundpages">#30a7bd</color>
+    <color name="btnbac">#FF1943</color>
 
 
 </resources>

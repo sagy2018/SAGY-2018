@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jason.sagy.Splash"
-    android:background="@color/green">
+    android:background="@color/starblue"
+    tools:context="com.example.jason.sagy.Splash">
 
     <ImageView
         android:id="@+id/imageView5"

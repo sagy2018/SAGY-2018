@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.jason.sagy.MainActivity"
-    android:background="@drawable/loginbac"
-    >
+    android:background="@color/starblue">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -36,7 +35,6 @@
                     android:ems="10"
                     android:hint="Enter Email"
                     android:inputType="textPersonName"
-                    android:textColor="@color/colorAccent"
                     android:textColorHint="#FFF" />
             </LinearLayout>
             <LinearLayout
@@ -64,7 +62,6 @@
                     android:hint="Enter Password"
                     android:inputType="textPassword"
                     android:paddingLeft="5dp"
-                    android:textColor="@color/colorAccent"
                     android:textColorHint="#FFF" />
             </LinearLayout>
 
@@ -75,9 +72,11 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/linearLayout"
-                android:background="@drawable/loginbuttongradient"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/btnbac"
                 android:text="Login"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/background"
                 android:textStyle="bold" />
 
     <TextView
@@ -92,17 +91,19 @@
         android:textColor="#FFF"
         android:textSize="15dp"/>
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:text="LOGIN WITH GOOGLE"
-        android:textColor="#FFF"
-        android:textStyle="bold"
-       android:background="@drawable/googlenga"/>
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/btnbac"
+                android:text="LOGIN WITH GOOGLE"
+                android:textColor="#FFF"
+                android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView9"
