@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 progressBa1.setVisibility(View.GONE);
                 if(task.isSuccessful()){
 
-                    Intent intent=new Intent(MainActivity.this,Selection.class);
+                    Intent intent=new Intent(MainActivity.this,Grid.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(),"User Logged in",Toast.LENGTH_SHORT).show();

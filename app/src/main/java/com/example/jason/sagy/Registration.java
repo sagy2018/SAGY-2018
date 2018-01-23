@@ -146,7 +146,7 @@ public class Registration extends AppCompatActivity {
                 progressBa.setVisibility(View.GONE);
                 if(task.isSuccessful()){
                     finish();
-                    Intent intent=new Intent(Registration.this,Selection.class);
+                    Intent intent=new Intent(Registration.this,Grid.class);
                     Toast.makeText(Registration.this, "User Registration is Successfull", Toast.LENGTH_SHORT).show();
                 }
                 else {

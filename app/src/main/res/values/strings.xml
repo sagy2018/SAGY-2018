@@ -11,4 +11,31 @@
             <item>village developement</item>
 
         </string-array>
+    <string name="title_activity_splash">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">SAGY</string>
+    <string name="slide_1_desc">Saansad Adarsh Gram Yojana The vision of our Honorable Prime Minister Shri Narendra Modi</string>
+
+    <string name="slide_2_title">Village Development</string>
+    <string name="slide_2_desc">MAHATMA GANDHI’S VISION OF A MODEL VILLAGE</string>
+
+    <string name="slide_3_title">NRHM</string>
+    <string name="slide_3_desc">The National Rural Health Mission (NRHM) was launched by the Hon’ble Prime Minister on 12th April 2005, affordable and quality health care to the rural population</string>
+
+    <string name="slide_4_title">NRLM</string>
+    <string name="slide_4_desc">This scheme is focused on promoting self-employment and organization of rural poor. The basic idea behind this programme</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+
 </resources>
