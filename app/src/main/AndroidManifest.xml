@@ -63,7 +63,7 @@
         <activity android:name=".thethirteenth" />
         <activity android:name=".thefourteenth" />
         <activity android:name=".Grid" />
-        <activity android:name=".galleryy" />
+        <activity android:name=".Gallery" />
         <activity android:name=".More" />
         <activity android:name=".anotherplus" />
         <activity android:name=".anotherplusplus"></activity>

@@ -57,7 +57,7 @@ public class Grid extends AppCompatActivity {
         l6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Grid.this,galleryy.class);
+                Intent intent=new Intent(Grid.this,Gallery.class);
                 startActivity(intent);
             }
         });
