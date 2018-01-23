@@ -9,6 +9,9 @@ import com.onesignal.OSNotificationDisplayedResult;
 import com.onesignal.OSNotificationReceivedResult;
 
 import java.math.BigInteger;
+import java.util.Calendar;
+import java.util.Date;
+
 
 /**
  * Created by goa on 22/1/18.
@@ -31,6 +34,9 @@ public class NotificationService extends NotificationExtenderService
 
                 String title = builder.mContentTitle.toString();
                 String content =  builder.mContentText.toString();
+
+
+
 
                 dbHelper.insertData(title, content, db);
                 Model model = new Model(title, content);

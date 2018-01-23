@@ -25,7 +25,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         String SQL_STATEMENT = "CREATE TABLE " + ContractClass.Utils.TABLE_NAME +
                 " ( " + ContractClass.Utils.ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                ContractClass.Utils.COLUMN_CONTENT + " TEXT, " + ContractClass.Utils.COLUMN_CONTENT + " TEXT );";
+                ContractClass.Utils.COLUMN_TITLE + " TEXT, " + ContractClass.Utils.COLUMN_CONTENT + " TEXT );";
         Log.i("SQL", "Statement " + SQL_STATEMENT);
 
         db.execSQL(SQL_STATEMENT);

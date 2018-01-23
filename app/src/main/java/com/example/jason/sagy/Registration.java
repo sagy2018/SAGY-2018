@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,6 +26,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.onesignal.OneSignal;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Registration extends AppCompatActivity {
 
     Button register;
@@ -44,6 +48,8 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        Date currentTime = Calendar.getInstance().getTime();
+        Log.i("TIME", "onCreate: "+currentTime);
 
         spinner =(Spinner) findViewById(R.id.spinner1);
         adapter=ArrayAdapter.createFromResource(this,R.array.planets_array,android.R.layout.simple_spinner_item);
