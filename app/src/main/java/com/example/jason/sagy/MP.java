@@ -26,6 +26,7 @@ public class MP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mp);
         lst = (ListView) findViewById(R.id.listview);
+
         CustomListView custom_listView = new CustomListView(this, MPName, desc, imgid);
 
 
