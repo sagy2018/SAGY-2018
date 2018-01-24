@@ -4,13 +4,12 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string-array name="planets_array">
-            <item></item>
-            <item>sports</item>
-            <item>Housing</item>
-            <item>food</item>
-            <item>village developement</item>
+        <item>Sports</item>
+        <item>Housing</item>
+        <item>Food</item>
+        <item>Village development</item>
 
-        </string-array>
+    </string-array>
     <string name="title_activity_splash">Home Screen</string>
     <string name="next">NEXT</string>
     <string name="skip">SKIP</string>
@@ -37,5 +36,7 @@
         <item>@color/dot_dark_screen3</item>
         <item>@color/dot_dark_screen4</item>
     </array>
+
+    <string name="spinner_category">Category</string>
 
 </resources>

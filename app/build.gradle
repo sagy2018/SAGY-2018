@@ -16,7 +16,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders = [onesignal_app_id: "62af2e9f-d840-4895-9535-78f77dc4712e",
+        manifestPlaceholders = [onesignal_app_id               : "62af2e9f-d840-4895-9535-78f77dc4712e",
                                 // Project number pulled from dashboard, local value is ignored.
                                 onesignal_google_project_number: "REMOTE"]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -46,13 +46,9 @@ dependencies {
 
 
     compile 'com.android.support:recyclerview-v7:26.1.0'
-
     // volley
     compile 'com.android.volley:volley:1.0.0'
-
-
     compile 'com.github.bumptech.glide:glide:3.7.0'
-
     compile 'com.squareup.picasso:picasso:2.5.2'
 
     testImplementation 'junit:junit:4.12'

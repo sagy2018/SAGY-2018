@@ -33,37 +33,33 @@ public class Registration extends AppCompatActivity {
 
     Button register;
     TextView t2;
-    EditText username,password;
+    EditText username, password;
     ProgressBar progressBa;
     Spinner spinner;
     private FirebaseAuth mAuth;
     ArrayAdapter<CharSequence> adapter;
     DatabaseReference databaseReference;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         Date currentTime = Calendar.getInstance().getTime();
-        Log.i("TIME", "onCreate: "+currentTime);
+        Log.i("TIME", "onCreate: " + currentTime);
 
-        spinner =(Spinner) findViewById(R.id.spinner1);
-        adapter=ArrayAdapter.createFromResource(this,R.array.planets_array,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinner = (Spinner) findViewById(R.id.spinner1);
+        spinner.setPrompt(getString(R.string.spinner_category));
+        adapter = ArrayAdapter.createFromResource(this, R.array.planets_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        databaseReference=FirebaseDatabase.getInstance().getReference().child("users").push();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("users").push();
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (parent!= null) {
+                if (parent != null) {
                     Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "selected", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "selected", Toast.LENGTH_LONG).hashCode();
+                } else {
+                    Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "selected", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -74,17 +70,17 @@ public class Registration extends AppCompatActivity {
             }
         });
         mAuth = FirebaseAuth.getInstance();
-        progressBa=(ProgressBar)findViewById(R.id.progressBar);
-        username=(EditText)findViewById(R.id.editText4);
-        password=(EditText)findViewById(R.id.editText5);
-        register=(Button) findViewById(R.id.button2);
-        t2=(TextView)findViewById(R.id.textView2);
+        progressBa = (ProgressBar) findViewById(R.id.progressBar);
+        username = (EditText) findViewById(R.id.editText4);
+        password = (EditText) findViewById(R.id.editText5);
+        register = (Button) findViewById(R.id.button2);
+        t2 = (TextView) findViewById(R.id.textView2);
 
         t2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
-                Intent intent=new Intent(Registration.this,MainActivity.class);
+                Intent intent = new Intent(Registration.this, MainActivity.class);
                 startActivity(intent);
             }
 
@@ -100,62 +96,59 @@ public class Registration extends AppCompatActivity {
 
     }
 
-    private void adddata(){
+    private void adddata() {
         String user = username.getText().toString().trim();
-        String scheme=spinner.getSelectedItem().toString().trim();
+        String scheme = spinner.getSelectedItem().toString().trim();
 
-        if(!TextUtils.isEmpty(user)){
-           String id = databaseReference.push().getKey();
+        if (!TextUtils.isEmpty(user)) {
+            String id = databaseReference.push().getKey();
 
-          pojo pojo = new pojo(id,user,scheme);
+            pojo pojo = new pojo(id, user, scheme);
 
             databaseReference.setValue(pojo);
             //databaseReference.setValue(user);
 
 
-
-        }else {
-            Toast.makeText(this,"Enter valid name",Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Enter valid name", Toast.LENGTH_LONG).show();
         }
     }
 
 
+    private void registerUser() {
 
-    private void registerUser(){
-
-        String user=username.getText().toString().trim();
-        String pass=password.getText().toString().trim();
-        if(TextUtils.isEmpty(user)){
+        String user = username.getText().toString().trim();
+        String pass = password.getText().toString().trim();
+        if (TextUtils.isEmpty(user)) {
             username.setError("EMail is required");
             username.requestFocus();
         }
 
-        if(!Patterns.EMAIL_ADDRESS.matcher(user).matches()){
+        if (!Patterns.EMAIL_ADDRESS.matcher(user).matches()) {
             username.setError("Please enter a valid EMail");
             username.requestFocus();
             return;
         }
-        if(TextUtils.isEmpty(pass)){
+        if (TextUtils.isEmpty(pass)) {
             password.setError("Password is required");
             password.requestFocus();
             return;
         }
-        if(pass.length()<6){
+        if (pass.length() < 6) {
             password.setError("Minimum length of password must be 6");
             password.requestFocus();
             return;
         }
         progressBa.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressBa.setVisibility(View.GONE);
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     finish();
-                    Intent intent=new Intent(Registration.this,Grid.class);
+                    Intent intent = new Intent(Registration.this, Grid.class);
                     Toast.makeText(Registration.this, "User Registration is Successfull", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(Registration.this, "You are already Registered", Toast.LENGTH_SHORT).show();
                     } else {
@@ -164,7 +157,6 @@ public class Registration extends AppCompatActivity {
                 }
             }
         });
-
 
 
     }

@@ -5,6 +5,7 @@ package com.example.jason.sagy;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -12,9 +13,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -27,12 +30,30 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
     private List<Image> images;
     private Context mContext;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public ImageView thumbnail;
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private ImageView thumbnail;
+        private List<Image>imageList;
+        private Context context;
 
-        public MyViewHolder(View view) {
+
+        public MyViewHolder(Context context, View view, List<Image>imageList) {
             super(view);
+            this.imageList = imageList;
+            this.context = context;
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+
+            thumbnail.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            int posiion = getAdapterPosition();
+            Image image = imageList.get(posiion);
+            String url = image.getUrlOfImage();
+            Intent i = new Intent(context, ImageOpenActivity.class);
+            i.putExtra("URL", url);
+            context.startActivity(i);
         }
     }
 
@@ -47,18 +68,22 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.gallery_thumbnail, parent, false);
 
-        return new MyViewHolder(itemView);
+        return new MyViewHolder(mContext, itemView, images);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Image image = images.get(position);
 
-        Glide.with(mContext).load(image.getMedium())
-                .thumbnail(0.5f)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
+        Picasso.with(mContext)
+                .load(image.getUrlOfImage())
+                .fit()
                 .into(holder.thumbnail);
+
+//        Glide.with(mContext).load(image.getMedium())
+//                .crossFade()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .into(holder.thumbnail);
     }
 
     @Override
