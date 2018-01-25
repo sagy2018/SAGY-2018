@@ -113,6 +113,11 @@ public class Registration extends AppCompatActivity {
             Toast.makeText(this, "Enter valid name", Toast.LENGTH_LONG).show();
         }
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Registration.this, MainActivity.class);
+        startActivity(intent);
+        }
 
 
     private void registerUser() {

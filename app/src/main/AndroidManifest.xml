@@ -16,10 +16,16 @@
             android:name=".ListService"
             android:exported="false" />
 
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".Registration" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".Introduction" />
         <activity android:name=".MP" />
         <activity android:name=".Village" />
@@ -54,13 +60,7 @@
         <activity android:name=".thetwelth" />
         <activity android:name=".thethirteenth" />
         <activity android:name=".thefourteenth" />
-        <activity android:name=".Grid">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <activity android:name=".Grid"/>
         <activity android:name=".Gallery" />
         <activity android:name=".More" />
         <activity android:name=".anotherplus" />

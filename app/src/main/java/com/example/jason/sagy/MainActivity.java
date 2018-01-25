@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     EditText e1,e2;
     FirebaseAuth mAuth;
     TextView t1;
-    ProgressBar progressBa1;
+    ProgressBar progressBa1,progressBar2;
     GoogleSignInClient mGoogleSignInClient;
     //private String email="yugandar.bala@gmail.com";
 
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         progressBa1=(ProgressBar)findViewById(R.id.progressBar1);
+        progressBar2=(ProgressBar)findViewById(R.id.progressBar2);
         b1=(Button) findViewById(R.id.button);
         b4 = (Button)findViewById(R.id.button4); 
         e1=(EditText)findViewById(R.id.emailID);
@@ -96,9 +97,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void googleSignIn() {
-
+        progressBar2.setVisibility(View.VISIBLE);
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+        progressBar2.setVisibility(View.GONE);
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
