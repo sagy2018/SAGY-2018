@@ -1,6 +1,7 @@
 package com.example.jason.sagy;
 
 import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +13,8 @@ import android.widget.ListView;
 import android.widget.RemoteViews;
 
 import com.onesignal.OneSignal;
+
+import java.util.ArrayList;
 
 public class Notifications extends AppCompatActivity {
 
@@ -25,11 +28,12 @@ public class Notifications extends AppCompatActivity {
         setContentView(R.layout.activity_notifications);
         notificationListView = findViewById(R.id.notification_listView);
 
-
+        NotificationService.notifications.clear();
         OneSignal.startInit(this)
                 .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
                 .unsubscribeWhenNotificationsAreDisabled(true)
                 .init();
+
 
         DbHelper dbHelper = new DbHelper(Notifications.this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();

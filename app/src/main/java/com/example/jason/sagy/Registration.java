@@ -59,7 +59,7 @@ public class Registration extends AppCompatActivity {
                 if (parent != null) {
                     Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "selected", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "selected", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), parent.getItemAtPosition(position) + "  " + "", Toast.LENGTH_LONG).show();
 
                 }
             }

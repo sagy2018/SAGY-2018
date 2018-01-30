@@ -10,7 +10,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="11dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -72,7 +78,7 @@
             android:layout_below="@+id/linearLayout"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/btnbac"
+            android:background="#0288D1"
             android:text="Login"
             android:textColor="@color/background"
             android:textStyle="bold" />
@@ -98,7 +104,7 @@
             android:layout_marginBottom="40dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:background="@color/btnbac"
+            android:background="#0288D1"
             android:text="LOGIN WITH GOOGLE"
             android:textColor="#FFF"
             android:textStyle="bold" />

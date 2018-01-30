@@ -42,7 +42,7 @@
                 android:ems="10"
                 android:hint="UserName"
                 android:inputType="textPersonName"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorAccent" />
 
         </LinearLayout>
 
@@ -135,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:background="@color/btnbac"
+            android:background="#0288D1"
             android:text="Register"
             android:textColor="@color/background" />
 
