@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -32,6 +33,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView thumbnail;
+        private TextView title;
         private List<Image>imageList;
         private Context context;
 
@@ -40,7 +42,9 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
             super(view);
             this.imageList = imageList;
             this.context = context;
+
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            title = (TextView)view.findViewById(R.id.title) ;
 
             thumbnail.setOnClickListener(this);
 
@@ -75,6 +79,10 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Image image = images.get(position);
 
+        Image name  = images.get(position);
+
+        String title = name.getName();
+        holder.title.setText(title);
         Picasso.with(mContext)
                 .load(image.getUrlOfImage())
                 .fit()
@@ -96,47 +104,5 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.MyViewHo
 
         void onLongClick(View view, int position);
     }
-
-//    public static class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
-//
-//        private GestureDetector gestureDetector;
-//        private GalleryAdapter.ClickListener clickListener;
-
-//        public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final GalleryAdapter.ClickListener clickListener) {
-//            this.clickListener = clickListener;
-//            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
-//                @Override
-//                public boolean onSingleTapUp(MotionEvent e) {
-//                    return true;
-//                }
-//
-//                @Override
-//                public void onLongPress(MotionEvent e) {
-//                    View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
-//                    if (child != null && clickListener != null) {
-//                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
-//                    }
-//                }
-//            });
-//        }
-//
-//        @Override
-//        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-//
-//            View child = rv.findChildViewUnder(e.getX(), e.getY());
-//            if (child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
-//                clickListener.onClick(child, rv.getChildPosition(child));
-//            }
-//            return false;
-//        }
-//
-//        @Override
-//        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-//        }
-//
-//        @Override
-//        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-//
-//        }
 
 }

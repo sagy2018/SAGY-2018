@@ -1,14 +1,11 @@
 package com.example.jason.sagy;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.app.ProgressDialog;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -18,7 +15,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,35 +24,22 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.jason.sagy.R;
-import com.example.jason.sagy.GalleryAdapter;
+public class TeamActivity extends AppCompatActivity {
 
-import com.example.jason.sagy.AppController;
-import com.example.jason.sagy.Image;
-
-public class Gallery extends AppCompatActivity {
-
-    private String TAG = "Gallery";
+    private String TAG = "Team";
     private ArrayList<Image> images;
     private ProgressDialog pDialog;
     private GalleryAdapter mAdapter;
     private RecyclerView recyclerView;
     private RequestQueue requestQueue;
     private ProgressBar progressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_galleryy);
-//
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_team);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_gallery);
-        progressBar = findViewById(R.id.gallery_progressBar);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_team);
+        progressBar = findViewById(R.id.team_progressBar);
 
         pDialog = new ProgressDialog(this);
         images = new ArrayList<>();
@@ -67,7 +52,6 @@ public class Gallery extends AppCompatActivity {
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
 
 
         /* recyclerView.addOnItemTouchListener(new GalleryAdapter.RecyclerTouchListener(getApplicationContext(), recyclerView, new GalleryAdapter.ClickListener() {
@@ -112,7 +96,6 @@ public class Gallery extends AppCompatActivity {
                                 String urlOfImage = object.getString("url");
                                 String name = object.getString("name");
                                 Image image = new Image(name, urlOfImage);
-                                Image names = new Image(name, name);
                                 images.add(image);
 
                             }
@@ -130,11 +113,12 @@ public class Gallery extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Error: " + error.getMessage());
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(Gallery.this, "Error", Toast.LENGTH_LONG).show();
+                Toast.makeText(TeamActivity.this, "Error", Toast.LENGTH_LONG).show();
             }
         });
 
         // Adding request to request queue
         requestQueue.add(req);
     }
-}
+    }
+

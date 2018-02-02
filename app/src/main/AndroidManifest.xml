@@ -25,7 +25,7 @@
         </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".Registration" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Introduction" />
         <activity android:name=".MP" />
         <activity android:name=".Village" />
@@ -60,7 +60,7 @@
         <activity android:name=".thetwelth" />
         <activity android:name=".thethirteenth" />
         <activity android:name=".thefourteenth" />
-    <activity android:name=".Grid"/>
+        <activity android:name=".Grid" />
         <activity android:name=".Gallery" />
         <activity android:name=".More" />
         <activity android:name=".anotherplus" />
@@ -75,7 +75,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".ImageOpenActivity"></activity>
+        <activity android:name=".ImageOpenActivity" />
+        <activity android:name=".TeamActivity"></activity>
     </application>
 
 </manifest>

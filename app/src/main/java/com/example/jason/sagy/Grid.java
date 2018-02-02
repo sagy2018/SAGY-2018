@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Grid extends AppCompatActivity implements ViewPagerEx.OnPageChangeListener {
-    LinearLayout l1, l2, l3, l4, l5, l6, l8;
+    LinearLayout l1, l2, l3, l4, l5, l6,l7,l8;
     private AQuery aq;
     private SliderLayout Slider;
 
@@ -85,6 +85,14 @@ public class Grid extends AppCompatActivity implements ViewPagerEx.OnPageChangeL
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Grid.this, Gallery.class);
+                startActivity(intent);
+            }
+        });
+        l7 = (LinearLayout) findViewById(R.id.im7);
+        l7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Grid.this,TeamActivity .class);
                 startActivity(intent);
             }
         });
